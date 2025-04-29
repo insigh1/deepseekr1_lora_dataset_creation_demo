@@ -1,0 +1,129 @@
+# Configuration generated for legal_document dataset
+# Generated at: 2023-11-15 12:00:00+00:00
+
+# Sampling parameters for controlling response generation
+sampling_parameters:
+  temperature_range: (0.1, 0.3)  # Controls response randomness
+  top_p: 0.9  # Nucleus sampling parameter
+
+# Structure for generating prompts
+prompt_structure:
+  user_prompt_template: |
+    [Task] Design a data privacy policy template for a healthcare application, ensuring compliance with HIPAA and GDPR requirements. Include data handling procedures and user consent mechanisms.
+    [Requirements]
+    - Must comply with HIPAA and GDPR
+    - Include data collection, storage, processing, and sharing procedures
+    - Detail user rights and consent mechanisms
+    - Provide breach notification procedures
+    - Include contact information for data protection inquiries
+    - Use clear and legally precise language
+    [Input Data]
+    Application Type: {application_type}
+    Target Audience: {target_audience}
+    [Format]
+    Output: A well-structured privacy policy document with clear sections and headings
+  language_style: legal_precise_accessible
+
+# Required criteria for response validation
+required_criteria:
+  - legal compliance
+  - clarity
+  - completeness
+
+# Advanced configuration options
+advanced_options:
+  strict_mode: True
+
+# Dataset-specific parameters
+dataset_parameters:
+  output_format: document
+  task_description: Generate a HIPAA and GDPR-compliant privacy policy template for healthcare applications
+  max_tokens: 1500
+  seed_value: 42
+  validation_rules:
+    - legal accuracy
+    - section completeness
+    - language clarity
+    - legal accuracy
+    - section completeness
+    - language clarity
+    - compliance_check_HIPAA
+    - compliance_check_GDPR
+    - user_rights_coverage
+    - consent_mechanisms
+    - breach_notification_procedures
+
+# Quality control parameters
+quality_controls:
+  response_validation:
+    min_length: 800
+    max_length: 1500
+    required_elements:
+      - title
+      - introduction
+      - data_collection
+      - data_storage
+      - data_processing
+      - data_sharing
+      - user_rights
+      - consent_mechanisms
+      - breach_notification
+      - contact_information
+      - effective_date
+      - revision_history
+    forbidden_elements:
+      - informal_language
+      - ambiguous_terms
+      - non_compliant_procedures
+      - personal_opinions
+      - unsubstantiated_claims
+  diversity_controls:
+    min_unique_words: 200
+    max_repetition: 0.1
+    style_variation: 0.2
+  consistency_checks:
+    context_window: 1024
+    style_consistency: 0.9
+    fact_consistency: 0.95
+
+# Diversity parameters
+diversity_parameters:
+  variation_controls:
+    temperature_variation: 0.2
+    style_variation: 0.3
+    complexity_variation: 0.4
+  sampling_strategy:
+    method: stratified
+    min_unique_ratio: 0.7
+    max_similarity: 0.5
+  content_balancing:
+    topic_distribution: weighted
+    difficulty_levels:
+      - basic
+      - intermediate
+      - advanced
+    style_distribution:
+      - legal_precise
+      - legal_accessible
+      - legal_technical
+
+# Evaluation metrics
+evaluation_metrics:
+  quality_metrics:
+    coherence_score: 0.95
+    relevance_score: 0.98
+    completeness_score: 0.97
+  diversity_metrics:
+    vocabulary_richness: 0.85
+    syntactic_diversity: 0.8
+    semantic_diversity: 0.9
+  consistency_metrics:
+    factual_accuracy: 0.99
+    style_consistency: 0.95
+    context_relevance: 0.98
+
+# Example inputs for reference
+example_inputs:
+  - HIPAA-compliant data handling procedures
+  - GDPR user consent mechanisms
+  - Healthcare data breach notification template

@@ -1,0 +1,115 @@
+# Configuration generated for news_summarization dataset
+# Generated at: 2023-11-15 12:00:00+00:00
+
+# Sampling parameters for controlling response generation
+sampling_parameters:
+  temperature_range: (0.1, 0.3)  # Controls response randomness
+  top_p: 0.95  # Nucleus sampling parameter
+
+# Structure for generating prompts
+prompt_structure:
+  user_prompt_template: |
+    [Task] Summarize this news article into high-level bullet points
+    [Requirements]
+    - Keep summary under 100 tokens
+    - Focus on key facts and main events
+    - Use neutral tone
+    - Format as bullet points
+    [Input Data]
+    Article: {article_text}
+    [Format]
+    Output: Bullet point summary (max 100 tokens)
+  language_style: concise, factual, and neutral
+
+# Required criteria for response validation
+required_criteria:
+  - accuracy
+  - brevity
+  - neutral tone
+
+# Advanced configuration options
+advanced_options:
+  strict_mode: True
+
+# Dataset-specific parameters
+dataset_parameters:
+  output_format: bullet points
+  task_description: Generate concise bullet point summaries of news articles
+  max_tokens: 100
+  seed_value: 42
+  validation_rules:
+    - token limit
+    - factual accuracy
+    - no opinions
+    - token limit (max 100)
+    - factual accuracy
+    - no opinions or subjective language
+    - includes key figures and events
+    - neutral tone maintained
+    - bullet point format
+
+# Quality control parameters
+quality_controls:
+  response_validation:
+    min_length: 20
+    max_length: 100
+    required_elements:
+      - bullet points
+      - key facts
+      - main events
+      - neutral tone
+    forbidden_elements:
+      - opinions
+      - subjective language
+      - nested bullet points
+      - advertisements
+      - sensitive information
+  diversity_controls:
+    min_unique_words: 10
+    max_repetition: 2
+    style_variation: 0.3
+  consistency_checks:
+    context_window: 3
+    style_consistency: 0.9
+    fact_consistency: 0.95
+
+# Diversity parameters
+diversity_parameters:
+  variation_controls:
+    temperature_variation: 0.2
+    style_variation: 0.4
+    complexity_variation: 0.3
+  sampling_strategy:
+    method: stratified
+    min_unique_ratio: 0.7
+    max_similarity: 0.5
+  content_balancing:
+    topic_distribution: equal
+    difficulty_levels:
+      - easy
+      - medium
+      - hard
+    style_distribution:
+      - concise
+      - detailed
+      - analytical
+
+# Evaluation metrics
+evaluation_metrics:
+  quality_metrics:
+    coherence_score: 0.95
+    relevance_score: 0.97
+    completeness_score: 0.93
+  diversity_metrics:
+    vocabulary_richness: 0.85
+    syntactic_diversity: 0.75
+    semantic_diversity: 0.8
+  consistency_metrics:
+    factual_accuracy: 0.96
+    style_consistency: 0.94
+    context_relevance: 0.95
+
+# Example inputs for reference
+example_inputs:
+  - Summarize this article about climate change policies
+  - Create bullet points from this business merger news story

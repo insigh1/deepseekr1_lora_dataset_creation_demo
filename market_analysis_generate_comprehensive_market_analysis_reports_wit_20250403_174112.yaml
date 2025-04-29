@@ -1,0 +1,114 @@
+# Configuration generated for unknown dataset
+# Generated at: unknown
+
+# Sampling parameters for controlling response generation
+sampling_parameters:
+  temperature_range: (0.3, 0.6)  # Controls response randomness
+  top_p: 0.9  # Nucleus sampling parameter
+
+# Structure for generating prompts
+prompt_structure:
+  user_prompt_template: |
+    [Task] Generate a market analysis report for {industry/technology}.
+    [Requirements]
+    - Include data-driven insights
+    - Provide competitive analysis
+    - Offer strategic recommendations
+    - Focus on emerging trends and opportunities
+    [Input Data]
+    Industry/Technology: {industry/technology}
+    Timeframe: {timeframe}
+    [Format]
+    Output: Structured report with sections for Executive Summary, Market Overview, Competitive Landscape, Trends & Opportunities, and Strategic Recommendations.
+  language_style: professional
+
+# Required criteria for response validation
+required_criteria:
+  - data accuracy
+  - strategic relevance
+  - competitive insights
+
+# Advanced configuration options
+advanced_options:
+  strict_mode: True
+
+# Dataset-specific parameters
+dataset_parameters:
+  output_format: structured_report
+  task_description: Generate market analysis reports with data-driven insights and strategic recommendations
+  max_tokens: 1000
+  seed_value: 42
+  validation_rules:
+    - quantitative data references
+    - trend analysis
+    - actionable recommendations
+
+# Quality control parameters
+quality_controls:
+  response_validation:
+    min_length: 500
+    max_length: 1000
+    required_elements:
+      - Executive Summary
+      - Market Overview
+      - Competitive Landscape
+      - Trends & Opportunities
+      - Strategic Recommendations
+      - quantitative data references
+      - trend analysis
+      - actionable recommendations
+    forbidden_elements:
+      - personal opinions
+      - unsubstantiated claims
+      - offensive language
+      - irrelevant content
+  diversity_controls:
+    min_unique_words: 200
+    max_repetition: 3
+    style_variation: 0.7
+  consistency_checks:
+    context_window: 1024
+    style_consistency: 0.9
+    fact_consistency: 0.95
+
+# Diversity parameters
+diversity_parameters:
+  variation_controls:
+    temperature_variation: 0.4
+    style_variation: 0.7
+    complexity_variation: 0.6
+  sampling_strategy:
+    method: stratified
+    min_unique_ratio: 0.8
+    max_similarity: 0.3
+  content_balancing:
+    topic_distribution: equal
+    difficulty_levels:
+      - beginner
+      - intermediate
+      - advanced
+    style_distribution:
+      - professional
+      - technical
+      - concise
+
+# Evaluation metrics
+evaluation_metrics:
+  quality_metrics:
+    coherence_score: 0.9
+    relevance_score: 0.95
+    completeness_score: 0.85
+  diversity_metrics:
+    vocabulary_richness: 0.8
+    syntactic_diversity: 0.75
+    semantic_diversity: 0.85
+  consistency_metrics:
+    factual_accuracy: 0.9
+    style_consistency: 0.85
+    context_relevance: 0.95
+
+# Example inputs for reference
+example_inputs:
+  - Analyze the AI chip market for 2024
+  - Evaluate the competitive landscape of quantum computing startups
+  - Assess market opportunities in edge computing for IoT applications

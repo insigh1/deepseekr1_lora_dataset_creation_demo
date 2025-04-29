@@ -1,0 +1,108 @@
+# Configuration generated for legal_documents dataset
+# Generated at: 2023-11-15 12:00:00+00:00
+
+# Sampling parameters for controlling response generation
+sampling_parameters:
+  temperature_range: (0.1, 0.3)  # Controls response randomness
+  top_p: 0.9  # Nucleus sampling parameter
+
+# Structure for generating prompts
+prompt_structure:
+  user_prompt_template: |
+    [Task] Generate a classifier for legal text categorization.
+    [Requirements]
+    - Must classify into: legal, medical records, pip/medpay ledger, incident reports, medical bills, health insurance, and all others
+    - Handle varied legal terminology
+    - Distinguish between similar document types
+    [Input Data]
+    Document text: {document_text}
+    [Format]
+    Output: {category}
+  language_style: formal and precise
+
+# Required criteria for response validation
+required_criteria:
+  - accuracy
+  - terminology handling
+  - distinction between similar types
+
+# Advanced configuration options
+advanced_options:
+  strict_mode: True
+
+# Dataset-specific parameters
+dataset_parameters:
+  output_format: category
+  task_description: Classify legal text into predefined categories
+  max_tokens: 500
+  seed_value: 42
+  validation_rules:
+    - correct category assignment
+    - consistent formatting
+    - correct category assignment based on legal terminology
+    - consistent formatting
+    - handling of ambiguous terms
+    - cross-referencing with legal dictionaries
+
+# Quality control parameters
+quality_controls:
+  response_validation:
+    min_length: 1
+    max_length: 500
+    required_elements:
+      - legal terminology
+      - correct category assignment
+      - consistent formatting
+    forbidden_elements:
+      - informal language
+      - personal opinions
+      - offensive content
+  diversity_controls:
+    min_unique_words: 10
+    max_repetition: 3
+    style_variation: 0.2
+  consistency_checks:
+    context_window: 1000
+    style_consistency: 0.9
+    fact_consistency: 0.95
+
+# Diversity parameters
+diversity_parameters:
+  variation_controls:
+    temperature_variation: 0.2
+    style_variation: 0.3
+    complexity_variation: 0.4
+  sampling_strategy:
+    method: stratified
+    min_unique_ratio: 0.7
+    max_similarity: 0.5
+  content_balancing:
+    topic_distribution: equal
+    difficulty_levels:
+      - simple
+      - moderate
+      - complex
+    style_distribution:
+      - formal
+      - technical
+      - precise
+
+# Evaluation metrics
+evaluation_metrics:
+  quality_metrics:
+    coherence_score: 0.95
+    relevance_score: 0.98
+    completeness_score: 0.97
+  diversity_metrics:
+    vocabulary_richness: 0.85
+    syntactic_diversity: 0.8
+    semantic_diversity: 0.9
+  consistency_metrics:
+    factual_accuracy: 0.99
+    style_consistency: 0.95
+    context_relevance: 0.98
+
+# Example inputs for reference
+example_inputs:
+  - Classify this document: 'The patient was admitted on 01/01/2023 with complaints of severe back pain...'
+  - Is this text legal or medical? 'Pursuant to section 4.2 of the contract...'
